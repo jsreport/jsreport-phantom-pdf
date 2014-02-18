@@ -8,7 +8,7 @@
         },
 
         isFilled: function() {
-            return true;
+            return this.model.get("margin") != null || this.model.get("header")  != null || this.model.get("footer") != null;
         },
     });
 });

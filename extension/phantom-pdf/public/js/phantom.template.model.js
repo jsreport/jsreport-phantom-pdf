@@ -5,16 +5,17 @@
         setTemplate: function (templateModel) {
             this.templateModel = templateModel;
             
-            if (templateModel.get("phantom") == null)
-                    templateModel.set("phantom", new $entity.Phantom());
+            if (templateModel.get("phantom") == null) {
+                 templateModel.set("phantom", new $entity.Phantom());
+            }
             
-            this.set("margin", templateModel.get("phantom").margin);
+            this.set(templateModel.get("phantom").initData);
         },
 
         initialize: function () {
             var self = this;
-            this.listenTo(this, "change:margin", function() {
-                self.templateModel.get("phantom").margin = self.get("margin");
+            this.listenTo(this, "change", function() {
+                self.copyAttributesToEntity(self.templateModel.get("phantom"));
             });
         },
     });
