@@ -1,7 +1,7 @@
 {
-  "name": "jsreport-analytics",
+  "name": "jsreport-phantom-pdf",
   "version": "0.0.1",
-  "description": "jsreport extension collecting some grouped information about usage",
+  "description": "jsreport recipe which is rendering pdf from html using phantomjs",
   "scripts": {
     "test": "mocha test && standard"
   },
