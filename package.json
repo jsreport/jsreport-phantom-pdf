@@ -5,9 +5,14 @@
   "scripts": {
     "test": "mocha test && standard"
   },
+  "homepage": "https://github.com/jsreport/jsreport-phantom-pdf",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jsreport/jsreport-phantom-pdf.git"
+  },
   "keywords": [
     "jsreport",
-    "analytics"
+    "pdf"
   ],
   "standard": {
     "ignore": [
@@ -23,9 +28,9 @@
   },
   "license": "LGPL",
   "dependencies": {
-    "node.extend": "^1.1.5",
-    "q": "^1.4.1",
-    "toner-phantom": "^0.1.2"
+    "node.extend": "1.1.5",
+    "q": "1.4.1",
+    "toner-phantom": "0.1.2"
   },
   "author": "Jan Blaha",
   "devDependencies": {
