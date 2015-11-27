@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "jsreport recipe which is rendering pdf from html using phantomjs",
   "scripts": {
-    "test": "mocha test && standard"
+    "test": "mocha test && standard",
+    "prepublish": "node node_modules/jsreport-express/tools/optimize.js"
   },
   "homepage": "https://github.com/jsreport/jsreport-phantom-pdf",
   "repository": {
@@ -35,9 +36,11 @@
   "author": "Jan Blaha",
   "devDependencies": {
     "eslint": "^1.9.0",
-    "mocha": "^2.3.3",
-    "standard": "^5.3.1",
     "jsreport-core": "*",
-    "jsreport-templates": "*"
+    "jsreport-express": "*",
+    "jsreport-templates": "*",
+    "mocha": "^2.3.3",
+    "requirejs": "^2.1.22",
+    "standard": "^5.3.1"
   }
 }
