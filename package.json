@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "jsreport recipe which is rendering pdf from html using phantomjs",
   "scripts": {
-    "test": "mocha test && standard",
+    "test": "mocha test --timeout 5000 && standard",
     "prepublish": "node node_modules/jsreport-express/tools/optimize.js"
   },
   "homepage": "https://github.com/jsreport/jsreport-phantom-pdf",
