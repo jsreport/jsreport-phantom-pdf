@@ -37,7 +37,7 @@
         
         apiOverride: function(req) {
             req.template.phantom = {
-                    maring: this.get("margin") || "...",
+                    margin: this.get("margin") || "...",
                     header: this.get("header") || "...",
                     footer: this.get("footer") || "...",
                     headerHeight: this.get("headerHeight") || "...",
