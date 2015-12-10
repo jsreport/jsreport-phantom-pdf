@@ -1,14 +1,29 @@
-# jsreport-phantom-pdf
+# jsreport-phantom-image
 [![NPM Version](http://img.shields.io/npm/v/jsreport-phantom-pdf.svg?style=flat-square)](https://npmjs.com/package/jsreport-phantom-pdf)
 [![Build Status](https://travis-ci.org/jsreport/jsreport-phantom-pdf.png?branch=master)](https://travis-ci.org/jsreport/jsreport-phantom-pdf)
 
-> Adds recipe `phantom-pdf`  which render pdf from html using phantomjs
+> jsreport recipe which is rendering pdf from html using phantomjs
 
+See the docs http://jsreport.net/learn/phantom-pdf
 
-See http://jsreport.net/learn/phantom-pdf
+##Installation
 
-You can apply this extension manually to`jsreport-core` and pass configuration to it directly:
+> **npm install jsreport-phantom-pdf**
+> 
+##Usage
+To use `recipe` in for template rendering set `template.recipe=phantom-pdf` in the rendering request.
+
+```js
+{
+  template: { content: '...', recipe: 'phantom-pdf', enginne: '...', phantom: { ... } }
+}
+```
+
+##jsreport-core
+You can apply this extension also manually to [jsreport-core](https://github.com/jsreport/jsreport-core)
+
 ```js
 var jsreport = require('jsreport-core')()
 jsreport.use(require('jsreport-phantom-pdf')({ strategy: 'phantom-server' }))
 ```
+
