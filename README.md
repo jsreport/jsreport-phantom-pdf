@@ -9,7 +9,8 @@ See the docs http://jsreport.net/learn/phantom-pdf
 ##Installation
 
 > **npm install jsreport-phantom-pdf**
-> 
+
+
 ##Usage
 To use `recipe` in for template rendering set `template.recipe=phantom-pdf` in the rendering request.
 
