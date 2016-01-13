@@ -29,6 +29,7 @@
   },
   "license": "LGPL",
   "dependencies": {
+    "bluebird": "^3.1.1",
     "node.extend": "^1.1.5",
     "phantom-html-to-pdf": "^0.3.4",
     "q": "1.4.1",
