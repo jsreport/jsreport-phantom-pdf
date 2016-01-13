@@ -1,5 +1,6 @@
 var path = require('path')
 var Reporter = require('jsreport-core').Reporter
+require('should')
 
 describe('phantom pdf', function () {
   var reporter
@@ -20,6 +21,7 @@ describe('phantom pdf', function () {
     }
 
     reporter.render(request, {}).then(function (response) {
+      response.content.toString().should.containEql('%PDF')
       done()
     }).catch(done)
   })
