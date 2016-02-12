@@ -17,6 +17,7 @@ describe('phantom pdf', function () {
 
   it('should not fail when rendering', function (done) {
     var request = {
+      logger: reporter.logger,
       template: {content: 'Heyx', recipe: 'phantom-pdf', engine: 'none'}
     }
 

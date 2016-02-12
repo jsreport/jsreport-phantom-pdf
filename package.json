@@ -29,11 +29,11 @@
   },
   "license": "LGPL",
   "dependencies": {
-    "bluebird": "^3.1.1",
-    "node.extend": "^1.1.5",
-    "phantom-html-to-pdf": "^0.3.4",
+    "bluebird": "3.1.1",
+    "node.extend": "1.1.5",
+    "phantom-html-to-pdf": "0.4.1",
     "q": "1.4.1",
-    "stream-to-array": "^2.2.0"
+    "stream-to-array": "2.2.0"
   },
   "author": "Jan Blaha",
   "devDependencies": {
