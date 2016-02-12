@@ -1,4 +1,4 @@
-# jsreport-phantom-image
+# jsreport-phantom-pdf
 [![NPM Version](http://img.shields.io/npm/v/jsreport-phantom-pdf.svg?style=flat-square)](https://npmjs.com/package/jsreport-phantom-pdf)
 [![Build Status](https://travis-ci.org/jsreport/jsreport-phantom-pdf.png?branch=master)](https://travis-ci.org/jsreport/jsreport-phantom-pdf)
 
