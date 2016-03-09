@@ -32,7 +32,7 @@
         isDirty: function() {
             return this.get("margin") != null || this.get("header") != null || this.get("footer") != null ||
                 this.get("width") != null || this.get("height") != null || this.get("orientation") !== "portrait" ||
-                this.get("format") !== "A4" || this.get("printDelay") || this.get("waitForJS") || this.get("blockJavaScript");
+                this.get("format") !== "A4" || this.get("printDelay") || this.get("waitForJS") || this.get("blockJavaScript") || this.get("resourceTimeout");
         },
         
         apiOverride: function(req) {
@@ -48,7 +48,8 @@
                     height: this.get("height") || "...",
                     printDelay: this.get("printDelay") || "...",
                     waitForJS: this.get("waitForJS") || "...",
-                    blockJavaScript: this.get("blockJavaScript") || "..."
+                    blockJavaScript: this.get("blockJavaScript") || "...",
+                    resourceTimeout: this.get("resourceTimeout") || "..."
                 };
         }
     });
