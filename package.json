@@ -4,7 +4,8 @@
   "description": "jsreport recipe which is rendering pdf from html using phantomjs",
   "scripts": {
     "test": "mocha test --timeout 7000 && standard",
-    "prepublish": "node node_modules/jsreport-express/tools/optimize.js"
+    "build": "jsreport-studio-build",
+    "prepublish": "in-publish && jsreport-studio-build || not-in-publish"
   },
   "homepage": "https://github.com/jsreport/jsreport-phantom-pdf",
   "repository": {
@@ -17,33 +18,39 @@
   ],
   "standard": {
     "ignore": [
-      "public/**"
+      "main.js"
     ],
-    "globals": [
-      "describe",
-      "it",
-      "beforeEach",
-      "define",
-      "ace"
-    ]
+    "parser": "babel-eslint",
+    "env": {
+      "node": true,
+      "mocha": true,
+      "browser": true
+    }
   },
   "license": "LGPL",
   "dependencies": {
-    "bluebird": "3.1.1",
+    "bluebird": "3.4.0",
+    "in-publish": "2.0.0",
     "node.extend": "1.1.5",
     "phantom-html-to-pdf": "0.4.3",
     "q": "1.4.1",
-    "stream-to-array": "2.2.0"
+    "stream-to-array": "2.3.0"
   },
   "author": "Jan Blaha",
-  "devDependencies": {
-    "eslint": "^1.9.0",
+  "peerDependencies": {
     "jsreport-core": "*",
-    "jsreport-express": "*",
+    "jsreport-templates": "*"
+  },
+  "devDependencies": {
+    "babel-eslint": "6.0.4",
+    "eslint": "2.11.1",
+    "eslint-config-standard-jsx": "1.2.1",
+    "eslint-plugin-babel": "3.2.0",
+    "jsreport-core": "*",
+    "jsreport-studio-dev": "0.2.8",
     "jsreport-templates": "*",
-    "mocha": "^2.3.3",
-    "requirejs": "^2.1.22",
-    "should": "^8.1.1",
-    "standard": "^5.3.1"
+    "mocha": "2.5.3",
+    "should": "9.0.1",
+    "standard": "7.1.2"
   }
 }
