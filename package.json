@@ -1,6 +1,6 @@
 {
   "name": "jsreport-phantom-pdf",
-  "version": "0.4.4",
+  "version": "1.0.0",
   "description": "jsreport recipe which is rendering pdf from html using phantomjs",
   "scripts": {
     "test": "mocha test --timeout 7000 && standard",
@@ -37,10 +37,6 @@
     "stream-to-array": "2.3.0"
   },
   "author": "Jan Blaha",
-  "peerDependencies": {
-    "jsreport-core": "*",
-    "jsreport-templates": "*"
-  },
   "devDependencies": {
     "babel-eslint": "6.0.4",
     "eslint": "2.11.1",
