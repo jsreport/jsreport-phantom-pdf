@@ -26,16 +26,15 @@ Studio.addApiSpec({
   }
 })
 
-const reformat = function (type) {
-  return (reformatter, entity) => {
-    const reformated = reformatter(entity.phantom[type], 'html')
+const reformat = (reformatter, entity, tab) => {
+  const reformated = reformatter(entity.phantom[tab.headerOrFooter], 'html')
 
-    return {
-      phantom: {
-        [type]: reformated
-      }
+  return {
+    phantom: {
+      [tab.headerOrFooter]: reformated
     }
   }
 }
-Studio.addEditorComponent(Constants.PHANTOM_TAB_EDITOR, PhantomEditor, reformat('header'))
-Studio.addTabTitleComponent(Constants.PHANTOM_TAB_TITLE, PhantomTitle, reformat('footer'))
+
+Studio.addEditorComponent(Constants.PHANTOM_TAB_EDITOR, PhantomEditor, reformat)
+Studio.addTabTitleComponent(Constants.PHANTOM_TAB_TITLE, PhantomTitle)
