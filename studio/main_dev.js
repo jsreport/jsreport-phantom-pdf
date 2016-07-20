@@ -25,5 +25,17 @@ Studio.addApiSpec({
     }
   }
 })
-Studio.addEditorComponent(Constants.PHANTOM_TAB_EDITOR, PhantomEditor)
-Studio.addTabTitleComponent(Constants.PHANTOM_TAB_TITLE, PhantomTitle)
+
+const reformat = function (type) {
+  return (reformatter, entity) => {
+    const reformated = reformatter(entity.phantom[type], 'html')
+
+    return {
+      phantom: {
+        [type]: reformated
+      }
+    }
+  }
+}
+Studio.addEditorComponent(Constants.PHANTOM_TAB_EDITOR, PhantomEditor, reformat('header'))
+Studio.addTabTitleComponent(Constants.PHANTOM_TAB_TITLE, PhantomTitle, reformat('footer'))
