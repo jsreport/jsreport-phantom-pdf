@@ -19,8 +19,16 @@ export default class Properties extends Component {
 
     const changePhantom = (change) => onChange(Object.assign({}, entity, { phantom: Object.assign({}, entity.phantom, change) }))
 
+    const phantoms = Studio.extensions['phantom-pdf'].options.phantoms
+
     return (
       <div className='properties-section'>
+        <div className='form-group'><label>phantomjs version</label>
+          <select value={phantom.phantomjsVersion || phantoms[0].version} onChange={(v) => changePhantom({phantomjsVersion: v.target.value})}>
+            {phantoms.map((p) => <option key={p.version} value={p.version}>{p.version}</option>)}
+          </select>
+        </div>
+
         <div className='form-group'><label>margin</label>
           <input
             type='text' placeholder='1cm' value={phantom.margin || ''}
@@ -60,13 +68,13 @@ export default class Properties extends Component {
 
         <div className='form-group'><label>paper width</label>
           <input
-            type='text' placeholder='1cm' value={phantom.paperWidth || ''}
-            onChange={(v) => changePhantom({paperWidth: v.target.value})} />
+            type='text' placeholder='1cm' value={phantom.width || ''}
+            onChange={(v) => changePhantom({width: v.target.value})} />
         </div>
         <div className='form-group'><label>paper height</label>
           <input
-            type='text' placeholder='1cm' value={phantom.paperHeight || ''}
-            onChange={(v) => changePhantom({paperHeight: v.target.value})} />
+            type='text' placeholder='1cm' value={phantom.height || ''}
+            onChange={(v) => changePhantom({height: v.target.value})} />
         </div>
 
         <div className='form-group'><label>orientation</label>
@@ -103,7 +111,7 @@ export default class Properties extends Component {
         </div>
 
         <div className='form-group'>
-          <label>use custom phantomjs</label>
+          <label>use custom phantomjs (deprecated)</label>
           <input
             type='checkbox' checked={phantom.customPhantomJS === true}
             onChange={(v) => changePhantom({customPhantomJS: v.target.checked})} />
