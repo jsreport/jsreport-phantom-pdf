@@ -111,6 +111,12 @@ export default class Properties extends Component {
         </div>
 
         <div className='form-group'>
+          <label>fit to page</label>
+          <input
+            type='checkbox' checked={phantom.fitToPage === true}
+            onChange={(v) => changePhantom({fitToPage: v.target.checked})} />
+        </div>
+        <div className='form-group'>
           <label>use custom phantomjs (deprecated)</label>
           <input
             type='checkbox' checked={phantom.customPhantomJS === true}

@@ -21,7 +21,8 @@ Studio.addApiSpec({
       resourceTimeout: 1000,
       customPhantomJS: true,
       blockJavaScript: false,
-      waitForJS: false
+      waitForJS: false,
+      fitToPage: false
     }
   }
 })
