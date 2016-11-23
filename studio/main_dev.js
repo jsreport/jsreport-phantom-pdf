@@ -39,3 +39,5 @@ const reformat = (reformatter, entity, tab) => {
 
 Studio.addEditorComponent(Constants.PHANTOM_TAB_EDITOR, PhantomEditor, reformat)
 Studio.addTabTitleComponent(Constants.PHANTOM_TAB_TITLE, PhantomTitle)
+
+Studio.entityTreeIconResolvers.push((entity) => (entity.__entitySet === 'templates' && entity.recipe === 'phantom-pdf') ? 'fa-file-pdf-o' : null)
