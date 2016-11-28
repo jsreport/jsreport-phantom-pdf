@@ -16,7 +16,7 @@ To use `recipe` in for template rendering set `template.recipe=phantom-pdf` in t
 
 ```js
 {
-  template: { content: '...', recipe: 'phantom-pdf', enginne: '...', phantom: { ... } }
+  template: { content: '...', recipe: 'phantom-pdf', engine: '...', phantom: { ... } }
 }
 ```
 
