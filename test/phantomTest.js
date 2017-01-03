@@ -64,3 +64,34 @@ describe('phantom pdf', function () {
   })
 })
 
+describe('phantom pdf with defaultPhantomjsVersion', function () {
+  var reporter
+
+  beforeEach(function (done) {
+    reporter = new Reporter({
+      rootDirectory: path.join(__dirname, '../'),
+      phantom: {
+        defaultPhantomjsVersion: '2.1.1'
+      }
+    })
+
+    reporter.init().then(function () {
+      done()
+    }).fail(done)
+  })
+
+  it('should apply defaultPhantomjsVersion global option', function (done) {
+    reporter['phantom-pdf'].definition.options.phantoms[0].version.should.be.eql('2.1.1')
+    reporter['phantom-pdf'].definition.options.phantoms[1].version.should.be.eql('1.9.8')
+
+    var request = {
+      template: { content: 'Hey', recipe: 'phantom-pdf', engine: 'none' },
+      options: { debug: { logsToResponseHeader: true } }
+    }
+
+    reporter.render(request, {}).then(function (response) {
+      response.headers['Debug-Logs'].should.match(new RegExp(reporter['phantom-pdf'].definition.options.phantoms[0].version))
+      done()
+    }).catch(done)
+  })
+})
