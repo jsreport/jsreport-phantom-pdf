@@ -6,68 +6,62 @@ require('should')
 describe('phantom pdf', function () {
   var reporter
 
-  beforeEach(function (done) {
+  beforeEach(function () {
     reporter = new Reporter({
       rootDirectory: path.join(__dirname, '../')
     })
 
-    reporter.init().then(function () {
-      done()
-    }).fail(done)
+    return reporter.init()
   })
 
-  it('should not fail when rendering', function (done) {
+  it('should not fail when rendering', function () {
     var request = {
       template: { content: 'Heyx', recipe: 'phantom-pdf', engine: 'none' }
     }
 
-    reporter.render(request, {}).then(function (response) {
+    return reporter.render(request, {}).then(function (response) {
       response.content.toString().should.containEql('%PDF')
-      done()
-    }).catch(done)
+    })
   })
 
-  it('should provide logs', function (done) {
+  it('should provide logs', function () {
     var request = {
       template: { content: 'Heyx <script>console.log("hello world")</script>', recipe: 'phantom-pdf', engine: 'none' },
       options: { debug: { logsToResponseHeader: true } }
     }
 
-    reporter.render(request, {}).then(function (response) {
+    return reporter.render(request, {}).then(function (response) {
       response.headers['Debug-Logs'].should.match(/hello world/)
-      done()
-    }).catch(done)
+    })
   })
 
-  it('should run in default phantomjs', function (done) {
+  it('should run in default phantomjs', function () {
     var request = {
       template: { content: 'Hey', recipe: 'phantom-pdf', engine: 'none' },
       options: { debug: { logsToResponseHeader: true } }
     }
 
-    reporter.render(request, {}).then(function (response) {
+    return reporter.render(request, {}).then(function (response) {
       response.headers['Debug-Logs'].should.match(new RegExp(reporter['phantom-pdf'].definition.options.phantoms[0].version))
-      done()
-    }).catch(done)
+    })
   })
 
-  it('should be able to choose phantomjs version', function (done) {
+  it('should be able to choose phantomjs version', function () {
     var request = {
       template: { content: 'Hey', recipe: 'phantom-pdf', engine: 'none', phantom: { phantomjsVersion: '2.1.1' } },
       options: { debug: { logsToResponseHeader: true } }
     }
 
-    reporter.render(request, {}).then(function (response) {
+    return reporter.render(request, {}).then(function (response) {
       response.headers['Debug-Logs'].should.match(/2.1.1/)
-      done()
-    }).catch(done)
+    })
   })
 })
 
 describe('phantom pdf with defaultPhantomjsVersion', function () {
   var reporter
 
-  beforeEach(function (done) {
+  beforeEach(function () {
     reporter = new Reporter({
       rootDirectory: path.join(__dirname, '../'),
       phantom: {
@@ -75,12 +69,10 @@ describe('phantom pdf with defaultPhantomjsVersion', function () {
       }
     })
 
-    reporter.init().then(function () {
-      done()
-    }).fail(done)
+    return reporter.init()
   })
 
-  it('should apply defaultPhantomjsVersion global option', function (done) {
+  it('should apply defaultPhantomjsVersion global option', function () {
     reporter['phantom-pdf'].definition.options.phantoms[0].version.should.be.eql('2.1.1')
     reporter['phantom-pdf'].definition.options.phantoms[1].version.should.be.eql('1.9.8')
 
@@ -89,9 +81,8 @@ describe('phantom pdf with defaultPhantomjsVersion', function () {
       options: { debug: { logsToResponseHeader: true } }
     }
 
-    reporter.render(request, {}).then(function (response) {
+    return reporter.render(request, {}).then(function (response) {
       response.headers['Debug-Logs'].should.match(new RegExp(reporter['phantom-pdf'].definition.options.phantoms[0].version))
-      done()
-    }).catch(done)
+    })
   })
 })
