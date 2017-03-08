@@ -126,4 +126,3 @@ export default class Properties extends Component {
     )
   }
 }
-
