@@ -1,6 +1,6 @@
 {
   "name": "jsreport-phantom-pdf",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "jsreport recipe which is rendering pdf from html using phantomjs",
   "scripts": {
     "test": "mocha test --timeout 15000 && standard",
