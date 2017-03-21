@@ -4,14 +4,14 @@
 
 > jsreport recipe which is rendering pdf from html using phantomjs
 
-See the docs http://jsreport.net/learn/phantom-pdf
+See the docs https://jsreport.net/learn/phantom-pdf
 
-##Installation
+## Installation
 
 > **npm install jsreport-phantom-pdf**
 
 
-##Usage
+## Usage
 To use `recipe` in for template rendering set `template.recipe=phantom-pdf` in the rendering request.
 
 ```js
@@ -20,7 +20,7 @@ To use `recipe` in for template rendering set `template.recipe=phantom-pdf` in t
 }
 ```
 
-##jsreport-core
+## jsreport-core
 You can apply this extension also manually to [jsreport-core](https://github.com/jsreport/jsreport-core)
 
 ```js
