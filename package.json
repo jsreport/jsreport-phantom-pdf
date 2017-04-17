@@ -3,6 +3,8 @@
   "version": "1.4.2",
   "description": "jsreport recipe which is rendering pdf from html using phantomjs",
   "scripts": {
+    "start": "jsreport-studio-start --httpPort 5488",
+    "run": "npm run build && jsreport-studio-start --httpPort 5488 --run-only",
     "test": "mocha test --timeout 15000 && standard",
     "build": "jsreport-studio-build",
     "prepublish": "in-publish && jsreport-studio-build || not-in-publish"
