@@ -1,6 +1,8 @@
 # Logs
 logs
 *.log
+npm-debug.log
+npm-debug.log.*
 
 # Runtime data
 pids
@@ -30,3 +32,9 @@ node_modules
 
 studio/main.js
 studio/main.js.map
+
+# jsreport files
+data
+logs
+dev.config.json
+prod.config.json
