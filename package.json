@@ -32,7 +32,6 @@
   "license": "LGPL",
   "dependencies": {
     "bluebird": "3.5.0",
-    "in-publish": "2.0.0",
     "node.extend": "1.1.6",
     "phantom-html-to-pdf": "0.4.12",
     "stream-to-array": "2.3.0"
@@ -43,6 +42,7 @@
     "eslint": "3.19.0",
     "eslint-config-standard-jsx": "3.3.0",
     "eslint-plugin-babel": "4.1.1",
+    "in-publish": "2.0.0",
     "jsreport-core": "1.2.2",
     "jsreport-debug": "1.0.4",
     "jsreport-studio-dev": "1.1.0",
