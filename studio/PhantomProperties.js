@@ -27,32 +27,27 @@ export default class Properties extends Component {
   normalizeUIState (entity) {
     let stateToSet = {}
 
-    if (entity.__isNew) {
-      stateToSet.customMargin = false
-      stateToSet.marginOptions = undefined
-    } else {
-      stateToSet.customMargin = false
-      stateToSet.marginOptions = undefined
+    stateToSet.customMargin = false
+    stateToSet.marginOptions = undefined
 
-      if (entity.phantom && entity.phantom.margin) {
-        let customMargin
+    if (entity.phantom && entity.phantom.margin) {
+      let customMargin
 
-        if (entity.phantom.margin.trim()[0] === '{') {
-          try {
-            customMargin = JSON.parse(entity.phantom.margin)
-          } catch (e) {}
+      if (entity.phantom.margin.trim()[0] === '{') {
+        try {
+          customMargin = JSON.parse(entity.phantom.margin)
+        } catch (e) {}
 
-          if (customMargin) {
-            stateToSet.customMargin = true
+        if (customMargin) {
+          stateToSet.customMargin = true
 
-            if (
-              customMargin.top != null ||
-              customMargin.left != null ||
-              customMargin.right != null ||
-              customMargin.bottom != null
-            ) {
-              stateToSet.marginOptions = customMargin
-            }
+          if (
+            customMargin.top != null ||
+            customMargin.left != null ||
+            customMargin.right != null ||
+            customMargin.bottom != null
+          ) {
+            stateToSet.marginOptions = customMargin
           }
         }
       }
