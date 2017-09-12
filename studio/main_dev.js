@@ -28,10 +28,12 @@ Studio.addApiSpec({
 })
 
 const reformat = (reformatter, entity, tab) => {
-  const reformated = reformatter(entity.phantom[tab.headerOrFooter], 'html')
+  const lastPhantomProperties = entity.phantom || {}
+  const reformated = reformatter(lastPhantomProperties[tab.headerOrFooter], 'html')
 
   return {
     phantom: {
+      ...lastPhantomProperties,
       [tab.headerOrFooter]: reformated
     }
   }
