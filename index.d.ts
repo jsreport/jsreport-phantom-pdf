@@ -22,11 +22,11 @@ declare namespace JsReport {
 		footerHeight: string;
 		format: string;
 		orientation: 'portrait' | 'landscape';
-		blockJavaScript: 'true' | any;
+		blockJavaScript: boolean;
 		resourceTimeout: number;
-		waitForJS: 'true' | 'false' | boolean;
-		fitToPage: 'true' | 'false' | boolean;
-		customPhantomJS: 'true' | 'false' | boolean;
+		waitForJS: boolean;
+		fitToPage: boolean;
+		customPhantomJS: boolean;
 		phantomjsVersion: string;
 	}
 
