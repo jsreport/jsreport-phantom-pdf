@@ -1,6 +1,6 @@
 {
   "name": "jsreport-phantom-pdf",
-  "version": "1.4.6",
+  "version": "2.0.0",
   "description": "jsreport recipe which is rendering pdf from html using phantomjs",
   "scripts": {
     "start": "jsreport-studio-start --httpPort 5488",
