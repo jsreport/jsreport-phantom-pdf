@@ -11,6 +11,8 @@ describe('phantom pdf', function () {
       rootDirectory: path.join(__dirname, '../')
     })
 
+    reporter.use(require('../')())
+
     return reporter.init()
   })
 

@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "bluebird": "3.5.1",
+    "node.extend": "2.0.0",
     "phantom-html-to-pdf": "0.5.5",
     "stream-to-array": "2.3.0"
   },
