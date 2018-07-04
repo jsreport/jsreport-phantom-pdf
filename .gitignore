@@ -36,6 +36,7 @@ data
 logs
 dev.config.json
 prod.config.json
+jsreport.config.json
 
 # studio build files
 studio/main.js
