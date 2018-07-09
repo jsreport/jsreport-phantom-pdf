@@ -55,6 +55,45 @@ describe('phantom pdf', function () {
       response.meta.logs.map(l => l.message).should.matchAny(/2.1.1/)
     })
   })
+
+  it('should be able to use margin as string', function () {
+    var request = {
+      template: {
+        content: `Hey <script>console.log('hello')</script>`,
+        recipe: 'phantom-pdf',
+        engine: 'none',
+        phantom: {
+          margin: '25px'
+        }
+      }
+    }
+
+    return reporter.render(request).then(function (response) {
+      response.meta.logs.map(l => l.message).should.matchAny(/hello/)
+    })
+  })
+
+  it('should be able to use margin as object', function () {
+    var request = {
+      template: {
+        content: `Hey <script>console.log('hello')</script>`,
+        recipe: 'phantom-pdf',
+        engine: 'none',
+        phantom: {
+          margin: {
+            top: '25px',
+            left: '1cm',
+            right: '1cm',
+            bottom: '5px'
+          }
+        }
+      }
+    }
+
+    return reporter.render(request).then(function (response) {
+      response.meta.logs.map(l => l.message).should.matchAny(/hello/)
+    })
+  })
 })
 
 describe('phantom pdf with defaultPhantomjsVersion', function () {
