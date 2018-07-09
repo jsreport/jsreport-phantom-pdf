@@ -28,3 +28,27 @@ var jsreport = require('jsreport-core')()
 jsreport.use(require('jsreport-phantom-pdf')({ strategy: 'phantom-server' }))
 ```
 
+### Migration from 1.X to 2.X
+
+If you use jsreport-phantom-pdf with jsreport-core and migrated from version 1.x, the configuration for phantom pdf margin can't be passed anymore as an object, because of the new validation logic in jsreport 2.0.
+
+Henceforth you can no longer do :
+```js
+ margin: {
+    top: '25px',
+    left: '1cm',
+    right: '1cm',
+    bottom: '5px'
+}
+```
+
+but you have to pass config as a json compliant string, as :
+```js
+margin: '{"top": "25px","left": "1cm","right": "1cm","bottom": "5px"}'
+```
+
+You could also still pass a single margin as a integer-like string :  
+```js
+margin : '25'
+```
+
