@@ -16,6 +16,8 @@ describe('phantom pdf', function () {
     return reporter.init()
   })
 
+  afterEach(() => reporter && reporter.close())
+
   it('should not fail when rendering', function () {
     var request = {
       template: { content: 'Heyx', recipe: 'phantom-pdf', engine: 'none' }
@@ -112,6 +114,8 @@ describe('phantom pdf with defaultPhantomjsVersion', function () {
 
     return reporter.init()
   })
+
+  afterEach(() => reporter && reporter.close())
 
   it('should apply defaultPhantomjsVersion global option', function () {
     reporter['phantom-pdf'].definition.options.phantoms[0].version.should.be.eql('2.1.1')
