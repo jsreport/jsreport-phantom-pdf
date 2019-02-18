@@ -112,6 +112,8 @@ describe('phantom pdf with defaultPhantomjsVersion', function () {
       }
     })
 
+    reporter.use(require('../')())
+
     return reporter.init()
   })
 
