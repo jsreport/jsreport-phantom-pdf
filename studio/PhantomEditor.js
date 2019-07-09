@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { TextEditor } from 'jsreport-studio'
 
 export default class DataEditor extends Component {
+  // eslint-disable-next-line no-undef
   static propTypes = {
     entity: React.PropTypes.object.isRequired,
     tab: React.PropTypes.object.isRequired,
