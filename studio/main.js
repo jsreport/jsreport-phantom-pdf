@@ -241,6 +241,8 @@ var DataEditor = function (_Component) {
         }
       });
     }
+    // eslint-disable-next-line no-undef
+
   }]);
 
   return DataEditor;
