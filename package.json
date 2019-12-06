@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "bluebird": "3.5.4",
-    "node.extend.without.arrays": "1.1.6",
     "phantom-html-to-pdf": "0.6.0",
     "stream-to-array": "2.3.0"
   },
@@ -46,7 +45,7 @@
     "eslint-config-standard-jsx": "3.3.0",
     "eslint-plugin-babel": "4.1.2",
     "in-publish": "2.0.0",
-    "jsreport-core": "2.6.1",
+    "jsreport-core": "github:jsreport/jsreport-core",
     "jsreport-debug": "2.1.0",
     "jsreport-studio-dev": "1.5.0",
     "jsreport-templates": "2.3.1",
