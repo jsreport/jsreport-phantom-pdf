@@ -1,6 +1,6 @@
 {
   "name": "jsreport-phantom-pdf",
-  "version": "2.4.2",
+  "version": "2.5.0",
   "description": "jsreport recipe which is rendering pdf from html using phantomjs",
   "scripts": {
     "start": "jsreport-studio-start --httpPort 5488",
@@ -45,7 +45,7 @@
     "eslint-config-standard-jsx": "3.3.0",
     "eslint-plugin-babel": "4.1.2",
     "in-publish": "2.0.0",
-    "jsreport-core": "2.7.1",
+    "jsreport-core": "2.7.2",
     "jsreport-debug": "2.1.3",
     "jsreport-studio-dev": "1.5.0",
     "jsreport-templates": "2.3.2",
