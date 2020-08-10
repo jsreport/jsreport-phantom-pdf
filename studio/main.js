@@ -122,9 +122,9 @@ var _PhantomEditor = __webpack_require__(4);
 
 var _PhantomEditor2 = _interopRequireDefault(_PhantomEditor);
 
-var _PhantomProperties = __webpack_require__(6);
+var _PhantomPdfProperties = __webpack_require__(6);
 
-var _PhantomProperties2 = _interopRequireDefault(_PhantomProperties);
+var _PhantomPdfProperties2 = _interopRequireDefault(_PhantomPdfProperties);
 
 var _PhantomTitle = __webpack_require__(7);
 
@@ -144,7 +144,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-_jsreportStudio2.default.addPropertiesComponent('phantom pdf', _PhantomProperties2.default, function (entity) {
+_jsreportStudio2.default.addPropertiesComponent('phantom pdf', _PhantomPdfProperties2.default, function (entity) {
   return entity.__entitySet === 'templates' && entity.recipe === 'phantom-pdf';
 });
 
@@ -302,13 +302,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Properties = function (_Component) {
-  _inherits(Properties, _Component);
+var PhantomPdfProperties = function (_Component) {
+  _inherits(PhantomPdfProperties, _Component);
 
-  function Properties(props) {
-    _classCallCheck(this, Properties);
+  function PhantomPdfProperties(props) {
+    _classCallCheck(this, PhantomPdfProperties);
 
-    var _this = _possibleConstructorReturn(this, (Properties.__proto__ || Object.getPrototypeOf(Properties)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (PhantomPdfProperties.__proto__ || Object.getPrototypeOf(PhantomPdfProperties)).call(this, props));
 
     _this.state = {
       customMargin: false,
@@ -317,18 +317,18 @@ var Properties = function (_Component) {
     return _this;
   }
 
-  _createClass(Properties, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
+  _createClass(PhantomPdfProperties, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
       this.normalizeUIState(this.props.entity);
     }
   }, {
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
       // when component changes because another entity is selected
       // or when saving a new entity
-      if (this.props.entity._id !== nextProps.entity._id) {
-        this.normalizeUIState(nextProps.entity);
+      if (prevProps.entity._id !== this.props.entity._id) {
+        this.normalizeUIState(this.props.entity);
       }
     }
   }, {
@@ -816,10 +816,10 @@ var Properties = function (_Component) {
     }
   }]);
 
-  return Properties;
+  return PhantomPdfProperties;
 }(_react.Component);
 
-exports.default = Properties;
+exports.default = PhantomPdfProperties;
 
 /***/ }),
 /* 7 */

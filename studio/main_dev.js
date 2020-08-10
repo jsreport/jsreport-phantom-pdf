@@ -1,10 +1,10 @@
 import PhantomEditor from './PhantomEditor.js'
-import Properties from './PhantomProperties.js'
+import PhantomPdfProperties from './PhantomPdfProperties.js'
 import PhantomTitle from './PhantomTitle.js'
 import * as Constants from './constants.js'
 import Studio from 'jsreport-studio'
 
-Studio.addPropertiesComponent('phantom pdf', Properties, (entity) => entity.__entitySet === 'templates' && entity.recipe === 'phantom-pdf')
+Studio.addPropertiesComponent('phantom pdf', PhantomPdfProperties, (entity) => entity.__entitySet === 'templates' && entity.recipe === 'phantom-pdf')
 
 Studio.addApiSpec({
   template: {

@@ -2,7 +2,7 @@ import * as Constants from './constants.js'
 import React, { Component } from 'react'
 import Studio from 'jsreport-studio'
 
-export default class Properties extends Component {
+class PhantomPdfProperties extends Component {
   constructor (props) {
     super(props)
 
@@ -12,15 +12,15 @@ export default class Properties extends Component {
     }
   }
 
-  componentWillMount () {
+  componentDidMount () {
     this.normalizeUIState(this.props.entity)
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentDidUpdate (prevProps) {
     // when component changes because another entity is selected
     // or when saving a new entity
-    if (this.props.entity._id !== nextProps.entity._id) {
-      this.normalizeUIState(nextProps.entity)
+    if (prevProps.entity._id !== this.props.entity._id) {
+      this.normalizeUIState(this.props.entity)
     }
   }
 
@@ -293,3 +293,5 @@ export default class Properties extends Component {
     )
   }
 }
+
+export default PhantomPdfProperties
