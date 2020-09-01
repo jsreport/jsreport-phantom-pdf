@@ -1,15 +1,7 @@
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { TextEditor } from 'jsreport-studio'
 
-export default class DataEditor extends Component {
-  // eslint-disable-next-line no-undef
-  static propTypes = {
-    entity: PropTypes.object.isRequired,
-    tab: PropTypes.object.isRequired,
-    onUpdate: PropTypes.func.isRequired
-  }
-
+class PhantomEditor extends Component {
   render () {
     const { entity, onUpdate, tab } = this.props
 
@@ -23,3 +15,5 @@ export default class DataEditor extends Component {
     )
   }
 }
+
+export default PhantomEditor

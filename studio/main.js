@@ -122,11 +122,11 @@ var _PhantomEditor = __webpack_require__(4);
 
 var _PhantomEditor2 = _interopRequireDefault(_PhantomEditor);
 
-var _PhantomPdfProperties = __webpack_require__(6);
+var _PhantomPdfProperties = __webpack_require__(5);
 
 var _PhantomPdfProperties2 = _interopRequireDefault(_PhantomPdfProperties);
 
-var _PhantomTitle = __webpack_require__(7);
+var _PhantomTitle = __webpack_require__(6);
 
 var _PhantomTitle2 = _interopRequireDefault(_PhantomTitle);
 
@@ -198,10 +198,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _propTypes = __webpack_require__(5);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -218,16 +214,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var DataEditor = function (_Component) {
-  _inherits(DataEditor, _Component);
+var PhantomEditor = function (_Component) {
+  _inherits(PhantomEditor, _Component);
 
-  function DataEditor() {
-    _classCallCheck(this, DataEditor);
+  function PhantomEditor() {
+    _classCallCheck(this, PhantomEditor);
 
-    return _possibleConstructorReturn(this, (DataEditor.__proto__ || Object.getPrototypeOf(DataEditor)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (PhantomEditor.__proto__ || Object.getPrototypeOf(PhantomEditor)).apply(this, arguments));
   }
 
-  _createClass(DataEditor, [{
+  _createClass(PhantomEditor, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -245,28 +241,15 @@ var DataEditor = function (_Component) {
         }
       });
     }
-    // eslint-disable-next-line no-undef
-
   }]);
 
-  return DataEditor;
+  return PhantomEditor;
 }(_react.Component);
 
-DataEditor.propTypes = {
-  entity: _propTypes2.default.object.isRequired,
-  tab: _propTypes2.default.object.isRequired,
-  onUpdate: _propTypes2.default.func.isRequired
-};
-exports.default = DataEditor;
+exports.default = PhantomEditor;
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
-
-module.exports = Studio.libraries['prop-types'];
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -822,7 +805,7 @@ var PhantomPdfProperties = function (_Component) {
 exports.default = PhantomPdfProperties;
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
