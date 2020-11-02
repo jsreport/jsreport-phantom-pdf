@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "bluebird": "3.5.4",
-    "phantom-html-to-pdf": "0.6.0",
+    "phantom-html-to-pdf": "0.6.1",
     "stream-to-array": "2.3.0"
   },
   "author": "Jan Blaha",
